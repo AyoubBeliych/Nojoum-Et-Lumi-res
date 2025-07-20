@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horoscope App (أبراج)</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0c0a1d">
+    <link rel="apple-touch-icon" href="/vite.svg">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="أبراج">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'space-dark': '#0c0a1d',
+              'space-blue': '#1e1b3a',
+              'celestial-gold': '#facc15',
+              'nebula-purple': '#a855f7',
+              'cosmic-teal': '#22d3ee',
+              'starlight': '#f0f2f5',
+            },
+            fontFamily: {
+              'cairo': ['Cairo', 'sans-serif'],
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.5s ease-in-out',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-cairo bg-starlight dark:bg-space-dark">
+    <div id="root"></div>
+
+    <!-- Hidden audio elements for sound effects -->
+    <audio id="click-sound" src="https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/mczgrogu/1-01.%20Home%20Menu.mp3" preload="auto"></audio>
+    <audio id="navigate-sound" src="https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/xbsxvyxx/1-05.%20Enter%20Settings.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="https://vgmsite.com/soundtracks/nintendo-switch-sound-effects/gzlqimsp/1-11.%20Enter%20eShop.mp3" preload="auto"></audio>
+    
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+</body>
+</html>
