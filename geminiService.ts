@@ -1,5 +1,4 @@
 
-import { GoogleGenAI } from "@google/genai";
 import { LANGUAGES } from '../translations';
 import type { SupportedLanguage, UserData } from '../types';
 
@@ -9,7 +8,16 @@ if (!API_KEY) {
   console.error("Gemini API key is not set in environment variables.");
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const generateContent = async (prompt: string): Promise<string> => {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: prompt }] }] })
+  });
+  const data = await response.json();
+  return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+};
 
 export const getDailyHoroscope = async (zodiacNameEn: string, langCode: SupportedLanguage, localizedZodiacName: string): Promise<string> => {
   const languageName = LANGUAGES[langCode]?.name || 'English';
@@ -29,12 +37,7 @@ export const getDailyHoroscope = async (zodiacNameEn: string, langCode: Supporte
       Do not include any English text (unless ${languageName} is English) or introductory phrases like "Here is the horoscope".
       The tone should be encouraging and mystical. Format it into a few paragraphs.`;
     
-    const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: prompt,
-    });
-
-    return response.text;
+    return await generateContent(prompt);
   } catch (error) {
     console.error("Error fetching horoscope from Gemini:", error);
     throw new Error("Failed to fetch horoscope");
@@ -67,11 +70,7 @@ export const getSelfImprovementTip = async (topicKey: string, langCode: Supporte
     prompt += `\nThe entire response MUST be in ${languageName}. Do not include introductory phrases. Just provide the tip directly in a few paragraphs.`;
     
     try {
-        const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash',
-            contents: prompt,
-        });
-        return response.text;
+        return await generateContent(prompt);
     } catch(error) {
         console.error("Error fetching self-improvement tip from Gemini:", error);
         throw new Error("Failed to fetch self-improvement tip");
@@ -107,11 +106,7 @@ export const getDreamInterpretation = async (dream: string, langCode: SupportedL
     prompt += `\nThe entire response MUST be in ${languageName}. Do not include introductory phrases. Format it into a few paragraphs.`;
 
     try {
-        const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash',
-            contents: prompt,
-        });
-        return response.text;
+        return await generateContent(prompt);
     } catch(error) {
         console.error("Error fetching dream interpretation from Gemini:", error);
         throw new Error("Failed to fetch dream interpretation");
