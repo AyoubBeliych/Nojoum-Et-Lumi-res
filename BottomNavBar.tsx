@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { HomeIcon, SparklesIcon, DreamIcon, ProfileIcon } from './Icons';
-import { useLanguage } from '../contexts/LanguageContext';
-import type { View } from '../types';
+import { useLanguage } from './LanguageContext';
+import type { View } from './types';
 
 interface BottomNavBarProps {
   activePage: View['type'];

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from './LanguageContext';
 import { EmailIcon } from './Icons';
 
 interface VerifyAccountViewProps {

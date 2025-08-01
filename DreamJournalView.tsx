@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { getDreamInterpretation } from '../services/geminiService';
-import type { UserData } from '../types';
+import { useLanguage } from './LanguageContext';
+import { getDreamInterpretation } from './geminiService';
+import type { UserData } from './types';
 import { LoadingSpinner } from './Icons';
 
 interface DreamJournalViewProps {

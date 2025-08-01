@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { getSelfImprovementTip } from '../services/geminiService';
-import type { ImprovementTopicKey, UserData } from '../types';
+import { useLanguage } from './LanguageContext';
+import { getSelfImprovementTip } from './geminiService';
+import type { ImprovementTopicKey, UserData } from './types';
 import { LoadingSpinner } from './Icons';
 
 interface ImprovementTopicViewProps {

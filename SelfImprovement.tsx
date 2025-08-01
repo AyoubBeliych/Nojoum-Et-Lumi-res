@@ -1,7 +1,7 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { IMPROVEMENT_TOPICS } from '../constants';
-import type { ImprovementTopicKey, UserData } from '../types';
+import { useLanguage } from './LanguageContext';
+import { IMPROVEMENT_TOPICS } from './constants';
+import type { ImprovementTopicKey, UserData } from './types';
 
 interface SelfImprovementProps {
     onTopicSelect: (topicKey: ImprovementTopicKey) => void;

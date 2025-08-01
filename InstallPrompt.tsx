@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { DownloadIcon } from './Icons';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from './LanguageContext';
 
 export const InstallPrompt: React.FC = () => {
     const [installPromptEvent, setInstallPromptEvent] = useState<any>(null);

@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { ProfileIcon } from './Icons';
-import { useLanguage } from '../contexts/LanguageContext';
-import { UserData } from '../types';
+import { useLanguage } from './LanguageContext';
+import { UserData } from './types';
 
 interface HeaderProps {
   isLoggedIn: boolean;

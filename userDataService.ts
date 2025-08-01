@@ -1,5 +1,5 @@
 
-import type { UserData } from '../types';
+import type { UserData } from './types';
 
 const USER_DATA_KEY = 'horoscopeAppUserData';
 

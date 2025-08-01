@@ -1,7 +1,7 @@
 
 import React from 'react';
-import type { UserData, SupportedLanguage } from '../types';
-import { useLanguage } from '../contexts/LanguageContext';
+import type { UserData, SupportedLanguage } from './types';
+import { useLanguage } from './LanguageContext';
 import { LanguageSelector } from './LanguageSelector';
 import { SunIcon, MoonIcon, SoundOnIcon, SoundOffIcon, NotificationIcon } from './Icons';
 

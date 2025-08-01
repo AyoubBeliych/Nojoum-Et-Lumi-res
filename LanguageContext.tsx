@@ -1,8 +1,8 @@
 
 import React, { createContext, useState, useContext, useMemo, useEffect } from 'react';
-import { translations, LANGUAGES } from '../translations';
-import type { SupportedLanguage } from '../types';
-import { getUserData } from '../services/userDataService';
+import { translations, LANGUAGES } from './translations';
+import type { SupportedLanguage } from './types';
+import { getUserData } from './userDataService';
 
 interface LanguageContextType {
   language: SupportedLanguage;

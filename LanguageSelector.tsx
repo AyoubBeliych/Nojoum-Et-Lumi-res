@@ -1,8 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { LANGUAGES } from '../translations';
-import type { SupportedLanguage } from '../types';
+import { useLanguage } from './LanguageContext';
+import { LANGUAGES } from './translations';
+import type { SupportedLanguage } from './types';
 import { GlobeIcon, ChevronDownIcon } from './Icons';
 
 export const LanguageSelector: React.FC = () => {
