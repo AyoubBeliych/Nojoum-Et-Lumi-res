@@ -6,13 +6,27 @@ self.addEventListener('install', (event) => {
   // Pre-caching is not aggressive to allow for CDN updates.
   // The main pages are cached for an instant shell load.
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/vite.svg',
-      ]);
-    })
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      const assets = ['/', '/index.html', '/vite.svg'];
+
+      // Attempt to cache the PWA manifest. During a production build Vite
+      // fingerprints the manifest file (e.g. `/assets/manifest-xxxx.webmanifest`).
+      // Fetching `/manifest.webmanifest` will follow any redirect to the hashed
+      // file so we cache the final response URL to ensure offline availability.
+      try {
+        const response = await fetch('/manifest.webmanifest');
+        if (response.ok) {
+          const manifestPath = response.url.replace(self.location.origin, '');
+          assets.push(manifestPath);
+          await cache.put(manifestPath, response.clone());
+        }
+      } catch (err) {
+        console.error('Failed to cache manifest', err);
+      }
+
+      await cache.addAll(assets);
+    })()
   );
 });
 
