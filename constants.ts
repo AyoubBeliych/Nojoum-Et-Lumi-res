@@ -1,6 +1,6 @@
 
 import type { ZodiacSign, MBTIQuestion, ImprovementTopicKey } from './types';
-import { AriesIcon, TaurusIcon, GeminiIcon, CancerIcon, LeoIcon, VirgoIcon, LibraIcon, ScorpioIcon, SagittariusIcon, CapricornIcon, AquariusIcon, PiscesIcon, CometIcon, OrbitingStarsIcon, LotusStarIcon } from './components/Icons';
+import { AriesIcon, TaurusIcon, GeminiIcon, CancerIcon, LeoIcon, VirgoIcon, LibraIcon, ScorpioIcon, SagittariusIcon, CapricornIcon, AquariusIcon, PiscesIcon, CometIcon, OrbitingStarsIcon, LotusStarIcon } from './Icons';
 
 export const ZODIAC_SIGNS: ZodiacSign[] = [
   { nameKey: 'aries', nameEn: 'Aries', Icon: AriesIcon },

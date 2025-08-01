@@ -1,7 +1,7 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { LANGUAGES } from '../translations';
-import type { SupportedLanguage, UserData } from '../types';
+import { LANGUAGES } from './translations';
+import type { SupportedLanguage, UserData } from './types';
 
 const API_KEY = process.env.API_KEY;
 

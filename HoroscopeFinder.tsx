@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { ZODIAC_DATES, ZODIAC_SIGNS } from '../constants';
-import type { ZodiacSign } from '../types';
+import { useLanguage } from './LanguageContext';
+import { ZODIAC_DATES, ZODIAC_SIGNS } from './constants';
+import type { ZodiacSign } from './types';
 import { CloseIcon } from './Icons';
 
 interface HoroscopeFinderProps {

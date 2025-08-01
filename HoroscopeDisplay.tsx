@@ -1,8 +1,8 @@
 
 import React from 'react';
-import type { ZodiacSign } from '../types';
+import type { ZodiacSign } from './types';
 import { LoadingSpinner } from './Icons';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from './LanguageContext';
 
 interface HoroscopeDisplayProps {
   zodiac: ZodiacSign | null;

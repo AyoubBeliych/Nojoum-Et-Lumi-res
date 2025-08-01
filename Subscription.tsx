@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from './LanguageContext';
 
 export const Subscription: React.FC = () => {
     const [email, setEmail] = useState('');

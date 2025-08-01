@@ -1,7 +1,7 @@
 
 import React from 'react';
-import type { ZodiacSign } from '../types';
-import { useLanguage } from '../contexts/LanguageContext';
+import type { ZodiacSign } from './types';
+import { useLanguage } from './LanguageContext';
 
 interface ZodiacSelectorProps {
   zodiacs: ZodiacSign[];

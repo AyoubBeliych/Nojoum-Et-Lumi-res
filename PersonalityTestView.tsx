@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { MBTI_QUESTIONS } from '../constants';
+import { useLanguage } from './LanguageContext';
+import { MBTI_QUESTIONS } from './constants';
 
 interface PersonalityTestViewProps {
     onComplete: (mbtiType: string) => void;

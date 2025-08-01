@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import type { AuthMode } from '../types';
+import type { AuthMode } from './types';
 import { CloseIcon } from './Icons';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from './LanguageContext';
 
 interface AuthModalProps {
   mode: AuthMode;

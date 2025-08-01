@@ -1,27 +1,27 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Header } from './components/Header';
-import { ZodiacSelector } from './components/ZodiacSelector';
-import { HoroscopeDisplay } from './components/HoroscopeDisplay';
-import { AuthModal } from './components/AuthModal';
-import { Subscription } from './components/Subscription';
-import { getDailyHoroscope } from './services/geminiService';
+import { Header } from './Header';
+import { ZodiacSelector } from './ZodiacSelector';
+import { HoroscopeDisplay } from './HoroscopeDisplay';
+import { AuthModal } from './AuthModal';
+import { Subscription } from './Subscription';
+import { getDailyHoroscope } from './geminiService';
 import { ZODIAC_SIGNS } from './constants';
 import type { ZodiacSign, AuthMode, UserData, View } from './types';
-import { useLanguage } from './contexts/LanguageContext';
-import { HoroscopeFinder } from './components/HoroscopeFinder';
-import { PersonalityTestView } from './components/PersonalityTestView';
-import { ImprovementTopicView } from './components/ImprovementTopicView';
-import { getUserData, saveUserData, logoutUser, clearAllUserData } from './services/userDataService';
-import { BottomNavBar } from './components/BottomNavBar';
-import { GrowthView } from './components/GrowthView';
-import { ProfileView } from './components/ProfileView';
-import { DreamJournalView } from './components/DreamJournalView';
-import { VerifyAccountView } from './components/VerifyAccountView';
-import { SettingsView } from './components/SettingsView';
-import { soundService } from './services/soundService';
-import { notificationService } from './services/notificationService';
-import { InstallPrompt } from './components/InstallPrompt';
+import { useLanguage } from './LanguageContext';
+import { HoroscopeFinder } from './HoroscopeFinder';
+import { PersonalityTestView } from './PersonalityTestView';
+import { ImprovementTopicView } from './ImprovementTopicView';
+import { getUserData, saveUserData, logoutUser, clearAllUserData } from './userDataService';
+import { BottomNavBar } from './BottomNavBar';
+import { GrowthView } from './GrowthView';
+import { ProfileView } from './ProfileView';
+import { DreamJournalView } from './DreamJournalView';
+import { VerifyAccountView } from './VerifyAccountView';
+import { SettingsView } from './SettingsView';
+import { soundService } from './soundService';
+import { notificationService } from './notificationService';
+import { InstallPrompt } from './InstallPrompt';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);

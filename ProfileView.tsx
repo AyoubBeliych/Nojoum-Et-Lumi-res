@@ -1,8 +1,8 @@
 
 import React, { useRef } from 'react';
-import type { UserData, View } from '../types';
-import { useLanguage } from '../contexts/LanguageContext';
-import { ZODIAC_SIGNS } from '../constants';
+import type { UserData, View } from './types';
+import { useLanguage } from './LanguageContext';
+import { ZODIAC_SIGNS } from './constants';
 import { LogoutIcon, UserIcon, ProfileIcon, SettingsIcon, TrashIcon } from './Icons';
 
 interface ProfileViewProps {

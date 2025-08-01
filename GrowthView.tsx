@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { IMPROVEMENT_TOPICS } from '../constants';
-import type { ImprovementTopicKey, UserData, View } from '../types';
+import { useLanguage } from './LanguageContext';
+import { IMPROVEMENT_TOPICS } from './constants';
+import type { ImprovementTopicKey, UserData, View } from './types';
 
 interface GrowthViewProps {
     setView: (view: View) => void;
