@@ -48,8 +48,8 @@ self.addEventListener('activate', (event) => {
 // Fetch event: Serve from network first, falling back to cache.
 // This ensures content is up-to-date while providing offline support.
 self.addEventListener('fetch', (event) => {
-  // Do not cache API calls to Google
-  if (event.request.url.includes('generativelanguage.googleapis.com')) {
+  // Do not cache API calls to OpenAI
+  if (event.request.url.includes('api.openai.com')) {
     return event.respondWith(fetch(event.request));
   }
 
